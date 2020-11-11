@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.PriorityQueue;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class TestPriorityQueue {
     @Test
@@ -17,5 +18,26 @@ public class TestPriorityQueue {
         String expected = "!";
         String actual = pq.peek();
         assertEquals(expected,actual);
+    }
+    @Test
+    public void testPriorityQueueOffer(){
+        PriorityQueue <String> pq = new PriorityQueue<>();
+        pq.add("Y");
+        pq.add("O");
+        pq.offer("?");
+
+        String expected = "?";
+        String actual = pq.peek();
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void testPriorityQueueToArray(){
+        PriorityQueue <String> pq = new PriorityQueue<>();
+        pq.add("Y");
+        pq.add("O");
+        pq.offer("?");
+        Object [] expected = {"Y","O","?"};
+        Object[] actual = pq.toArray();
+        assertTrue(expected.length == actual.length);
     }
 }
